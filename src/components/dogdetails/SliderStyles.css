@@ -1,0 +1,23 @@
+/* Customize slick dots */
+.slick-dots li button:before {
+    font-size: 12px; /* Adjust the size of the dots */
+    color: #ddd; /* Inactive color */
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #4A90E2; /* Active dot color */
+  }
+  
+  .slick-dots {
+    bottom: -25px; /* Adjust the position of dots */
+  }
+  
+  .slick-dots li {
+    margin: 0 5px; /* Space between the dots */
+  }
+  
+  .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Make the dots round */
+  }

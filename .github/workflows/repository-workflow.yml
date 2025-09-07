@@ -30,13 +30,13 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v3
 
-      # - name: Restore Cache dependencies
-      #   uses: actions/cache@v4
-      #   env:
-      #     cache-name: cache-node-modules
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Restore Cache dependencies
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
      
       - name: Install dependencies
         run: npm install

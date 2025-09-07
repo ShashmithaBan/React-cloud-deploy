@@ -44,7 +44,7 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
-  Build and Push Docker image:
+  Build_and_Push_Docker_image:
     needs: [Test,Lint]
     runs-on: ubuntu-latest
     steps:

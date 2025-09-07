@@ -24,7 +24,7 @@ jobs:
         run: npm test
 
   Lint:
-    need: Test
+    needs: Test
     runs-on: Ubuntu-latest
     steps:
       - name: Get Code

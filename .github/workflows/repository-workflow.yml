@@ -63,6 +63,6 @@ jobs:
         with:
           context: 
           push: true 
-          tags: shashmitha2001/react-docker-aws-deploy:latest
+          tags: shashmitha2001/react-docker-aws-deploy:v1
 
       

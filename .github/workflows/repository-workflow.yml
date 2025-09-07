@@ -4,7 +4,7 @@ on: push
 
 jobs: 
   Test:
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
 
   Lint:
     needs: Test
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -43,3 +43,19 @@ jobs:
       
       - name: Run Lint
         run: npm run lint
+
+  Dockerizing:
+    needs: [Test,Lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false # Set to true to push the image
+          tags: your-docker-username/your-image-name:latest
+
+      

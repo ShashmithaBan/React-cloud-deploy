@@ -3,11 +3,11 @@ name: Adding docker image to the Docker hub
 on: push
 
 jobs: 
-  DockerImage:
+  Test:
     runs-on: Ubuntu-latest
     steps:
       - name: Get Code
-        uses: actions/checkout@3
+        uses: actions/checkout@v3
 
       - name: Cache dependencies
         uses: actions/cache@v4

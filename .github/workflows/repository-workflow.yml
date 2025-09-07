@@ -63,6 +63,6 @@ jobs:
         with:
           context: .
           push: true # Set to true to push the image
-          tags: shashmitha2001/monito-petshop:latest
+          tags: your-docker-username/your-image-name:latest
 
       

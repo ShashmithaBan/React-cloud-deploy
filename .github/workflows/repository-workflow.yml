@@ -63,6 +63,6 @@ jobs:
         with:
           context: .
           push: true # Set to true to push the image
-          tags: your-docker-username/your-image-name:latest
+          tags: shashmitha2001/react-docker-aws-deploy:latest
 
       

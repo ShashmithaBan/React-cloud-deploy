@@ -1,0 +1,7 @@
+name: Adding docker image to the Docker hub
+
+on: workdlow_dispatch
+
+jobs: 
+  DockerImage:
+     

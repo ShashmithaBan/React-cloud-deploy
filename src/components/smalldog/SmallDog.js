@@ -20,8 +20,10 @@ const SmallDog = () => {
 
   return (
     <>
+    
       <Header />
       <SmallDogBanner />
+      <h2>Small Dog Section</h2> 
       <div className='md:mx-[11rem] md:grid md:grid-cols-12'>
         <div className='md:col-span-2'>
           <Filter onFilterChange={handleFilterChange} />

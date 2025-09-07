@@ -61,8 +61,8 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          push: true # Set to true to push the image
+          context: 
+          push: true 
           tags: shashmitha2001/react-docker-aws-deploy:latest
 
       

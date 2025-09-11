@@ -1,6 +1,9 @@
 name: Runing on a AWS EC2
 
-on: workflow-dispatch
+on: 
+push:
+    branches:
+      - main
 
 jobs: 
   Test:

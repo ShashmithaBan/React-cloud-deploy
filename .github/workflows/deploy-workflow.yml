@@ -1,9 +1,9 @@
 name: Runing on a AWS EC2
 
 on: 
-push:
-    branches:
-      - main
+  push:
+      branches:
+        - main
 
 jobs: 
   Test:
@@ -91,7 +91,8 @@ jobs:
             echo "exists=true" >> $GITHUB_OUTPUT
             echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
           fi
-            - name: Setup Security Group
+      
+      - name: Setup Security Group
         id: sg-setup
         run: |
           # Try to find an existing SG by name

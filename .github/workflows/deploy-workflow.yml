@@ -168,7 +168,7 @@ jobs:
 
       - name: Deploy Docker to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ steps.ec2-ip.outputs.ec2_ip }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ steps.ec2-ip.outputs.ec2_ip }} << EOF
             # Install Docker if not already installed
             if ! command -v docker &> /dev/null; then
               sudo apt update -y
@@ -181,8 +181,8 @@ jobs:
             # Pull latest Docker image and run container
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
             docker stop monitor-app || true
-            docker rm monitor-app|| true
+            docker rm monitor-app || true
             docker run -d -p 80:80 --name monitor-app ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
           EOF
 
-      
+            

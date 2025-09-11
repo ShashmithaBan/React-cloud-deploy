@@ -1,6 +1,6 @@
 name: Adding docker image to the Docker hub
 
-on: push
+on: workflow-dispatch
 
 jobs: 
   Test:

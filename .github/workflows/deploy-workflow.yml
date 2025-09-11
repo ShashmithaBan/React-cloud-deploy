@@ -141,13 +141,13 @@ jobs:
             --count 1 \
             --instance-type t2.micro \
             --key-name github-action \
-            --security-group-ids sg-xxxxxx \
-            --subnet-id subnet-xxxxxx \
+            --security-group-ids ${{ steps.sg-setup.outputs.sg_id }} \
+            --subnet-id ${{ steps.subnet.outputs.subnet_id }} \
             --tag-specifications 'ResourceType=instance,Tags=[{Key=Monito,Value=MonitoAppServer}]' \
             --query 'Instances[0].InstanceId' \
             --output text
               )
-              
+
           echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
 
           echo "Waiting for EC2 to be ready..."

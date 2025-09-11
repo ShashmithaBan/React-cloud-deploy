@@ -140,7 +140,7 @@ jobs:
            --image-id ami-08c40ec9ead489470 \
             --count 1 \
             --instance-type t2.micro \
-            --key-name github-action \
+            --key-name githubac \
             --security-group-ids ${{ steps.sg-setup.outputs.sg_id }} \
             --subnet-id ${{ steps.subnet.outputs.subnet_id }} \
             --tag-specifications 'ResourceType=instance,Tags=[{Key=Monito,Value=MonitoAppServer}]' \

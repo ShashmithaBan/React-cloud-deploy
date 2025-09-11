@@ -127,7 +127,7 @@ jobs:
             --output text)
 
           echo "subnet_id=$SUBNET_ID" >> $GITHUB_OUTPUT
-          
+
       - name: Create EC2 if not exists
         if: steps.check-ec2.outputs.exists == 'false'
         id: create-ec2
@@ -175,10 +175,10 @@ jobs:
             fi
 
             # Pull latest Docker image and run container
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:latest
-            docker stop your-app-container || true
-            docker rm your-app-container || true
-            docker run -d -p 80:80 --name your-app-container ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:latest
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
+            docker stop monitor-app || true
+            docker rm monitor-app|| true
+            docker run -d -p 80:80 --name monitor-app ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
           EOF
 
       

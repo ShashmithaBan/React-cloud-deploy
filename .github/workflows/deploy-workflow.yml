@@ -137,7 +137,7 @@ jobs:
         id: create-ec2
         run: |
           INSTANCE_ID=$(aws ec2 run-instances \
-           --image-id ami-0ff3387ef7c \
+           --image-id ami-08c40ec9ead489470 \
             --count 1 \
             --instance-type t2.micro \
             --key-name github \

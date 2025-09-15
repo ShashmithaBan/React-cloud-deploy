@@ -140,9 +140,10 @@ jobs:
            --image-id ami-08c40ec9ead489470 \
             --count 1 \
             --instance-type t2.micro \
-            --key-name githubac \
+            --key-name github \
             --security-group-ids ${{ steps.sg-setup.outputs.sg_id }} \
             --subnet-id ${{ steps.subnet.outputs.subnet_id }} \
+            --region ${{ secrets.AWS_REGION }} \
             --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyAppServer}]' \
             --query 'Instances[0].InstanceId' \
             --output text

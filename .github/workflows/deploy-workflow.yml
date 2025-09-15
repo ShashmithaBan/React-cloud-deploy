@@ -146,6 +146,7 @@ jobs:
             --tag-specifications 'ResourceType=instance,Tags=[{Key=Monito,Value=MonitoAppServer}]' \
             --query 'Instances[0].InstanceId' \
             --output text
+            
               )
 
           echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT

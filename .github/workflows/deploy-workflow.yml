@@ -143,10 +143,10 @@ jobs:
             --key-name githubac \
             --security-group-ids ${{ steps.sg-setup.outputs.sg_id }} \
             --subnet-id ${{ steps.subnet.outputs.subnet_id }} \
-            --tag-specifications 'ResourceType=instance,Tags=[{Key=Monito,Value=MonitoAppServer}]' \
+            --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyAppServer}]' \
             --query 'Instances[0].InstanceId' \
             --output text
-            
+
               )
 
           echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT

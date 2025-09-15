@@ -154,6 +154,7 @@ jobs:
             --output text
           )
           
+          
           echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
           echo "Waiting for EC2 to be ready..."
           aws ec2 wait instance-status-ok --instance-ids $INSTANCE_ID --region ${{ secrets.AWS_REGION }}

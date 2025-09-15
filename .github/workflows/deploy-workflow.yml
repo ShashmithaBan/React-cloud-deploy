@@ -179,5 +179,5 @@ jobs:
             sudo docker pull shashmitha2001/react-docker-aws-deploy:latest
             sudo docker stop monitor-app || true
             sudo docker rm monitor-app || true
-            sudo docker run -d -p 80:80 --name monitor-app shashmitha2001/react-docker-aws-deploy:latest
+            sudo docker run -d -p 80:80 --name monitor-app shashmitha2001/react-docker-aws-deploy:v1
           EOF

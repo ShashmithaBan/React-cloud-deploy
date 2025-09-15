@@ -10,7 +10,7 @@ import Knowledge from './Knowledge'
 const Homepage = () => {
   return (
     <div className='z-0'>
-      <h1>Welcome to Monito Pet Shop</h1>
+      <h1>Welcome to Monito Pet</h1>
         <Hero/>
         <Pets/>
         <Banner1/>

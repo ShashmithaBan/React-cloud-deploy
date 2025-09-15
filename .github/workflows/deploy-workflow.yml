@@ -170,21 +170,14 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy Docker to EC2
-  run: |
-    ssh -o StrictHostKeyChecking=no ubuntu@${{ steps.ec2-ip.outputs.ec2_ip }} << 'EOF'
-      # Install Docker if not already installed
-      if ! command -v docker &> /dev/null; then
-        sudo apt update -y
-        sudo apt install -y docker.io
-        sudo systemctl start docker
-        sudo systemctl enable docker
-      fi
-      
-      # Add ubuntu user to docker group and apply immediately
-      sudo usermod -aG docker ubuntu
-      # Use sudo for docker commands to avoid permission issues
-      sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
-      sudo docker stop monitor-app || true
-      sudo docker rm monitor-app || true
-      sudo docker run -d -p 80:80 --name monitor-app ${{ secrets.DOCKERHUB_USERNAME }}/react-docker-aws-deploy:latest
-    EOF
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ steps.ec2-ip.outputs.ec2_ip }} << 'EOF'
+            # Debug: Check what's in the environment
+            echo "Docker Hub username would be: $DOCKERHUB_USERNAME"
+            
+            # Use sudo for all docker commands
+            sudo docker pull shashmitha2001/react-docker-aws-deploy:latest
+            sudo docker stop monitor-app || true
+            sudo docker rm monitor-app || true
+            sudo docker run -d -p 80:80 --name monitor-app shashmitha2001/react-docker-aws-deploy:latest
+          EOF
